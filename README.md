@@ -50,3 +50,7 @@ The controller is then free of any UI knowledge and can focus on the duties a co
 The component can then be used in another app by simply `require()`-ing it in and listing it as a module your app (or your higher level component) depend on, and then declaring its usage in the DOM like normal.
 
 `<demo-component list="people"></demo-component>`
+
+## Try it yourself
+
+Clone the repo, `npm install`, then `node build.js`.
