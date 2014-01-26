@@ -1,0 +1,29 @@
+{
+  "name": "angular-component-demo",
+  "version": "1.0.0",
+  "description": "Simple demo of self contained AngularJS component",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bclinkinbeard/angular-component-demo.git"
+  },
+  "keywords": [
+    "browser",
+    "angular",
+    "browserify",
+    "demo"
+  ],
+  "author": "Ben Clinkinbeard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bclinkinbeard/angular-component-demo/issues"
+  },
+  "devDependencies": {
+    "browserify-shim": "~2.0.10",
+    "brfs": "0.0.9",
+    "browserify": "~3.24.1"
+  }
+}
