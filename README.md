@@ -3,7 +3,7 @@ angular-component-demo
 
 Simple demo of self contained AngularJS component approach that I've been alluding to on Twitter.
 
-The code is all pretty self explanatory, but the basic idea is that by bundling the template (and ultimately CSS as well) with the component, you get a fully self contained, portable unit. Directives are obviously a great vehicle for this approach, so all that is reallynecessary to add is template inlining and self compilation/DOM insertion.
+The code is all pretty self explanatory, but the basic idea is that by bundling the template (and ultimately CSS as well) with the component, you get a fully self contained, portable unit. Directives are obviously a great vehicle for this approach, so all that is really necessary to add is template inlining and self compilation/DOM insertion.
 
 The full component is packaged as its own Angular module.
 
@@ -12,7 +12,7 @@ var angular = require('angular'),
   fs = require('fs');
 
 module.exports = angular.module('demo-component', [])
-  .constant('template', require('fs').readFileSync(__dirname + '/template.html'))
+  .constant('template', require('./template.html'))
   .directive('demoComponent', require('./DemoDirective'))
   .controller('DemoController', require('./DemoController'));
 ```
@@ -47,10 +47,14 @@ module.exports = function DemoDirective ($compile, template) {
 
 The controller is then free of any UI knowledge and can focus on the duties a controller should, like managing the `$scope`, etc.
 
-The component can then be used in another app by simply `require()`-ing it in and listing it as a module your app (or your higher level component) depend on, and then declaring its usage in the DOM like normal.
+The component can then be used by simply `require()`-ing it in and listing it as a module your app (or your higher level component) depends on, and then declaring its usage in the DOM like normal.
 
 `<demo-component list="people"></demo-component>`
 
 ## Try it yourself
 
 Clone the repo, `npm install`, then `node build.js`.
+
+## Umm, pkg.json?
+
+This file is included to show what your `package.json` would look like if this component were actually broken out into its own project/repository, which is the recommended approach/ultimate goal of this effort, that would then be installed into `node_modules` by other projects. Namely that you need to specify any transforms your component requires as dependencies, as well as listing them in the `browserify.transform` field. Since we are using this component as a local, rather than installed, dependency, we cannot name the file `package.json`.

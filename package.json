@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "browserify-shim": "~2.0.10",
-    "brfs": "0.0.9",
+    "partialify": "~2.0.1",
     "browserify": "~3.24.1"
   }
 }

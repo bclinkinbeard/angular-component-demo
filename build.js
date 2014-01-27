@@ -1,7 +1,7 @@
 var browserify = require('browserify'),
   shim = require('browserify-shim'),
   fs = require('fs'),
-  brfs = require('brfs'),
+  partialify = require('partialify'),
   shimConfig = {
     angular: {
       path: __dirname + '/vendor/angular.js',
@@ -9,12 +9,12 @@ var browserify = require('browserify'),
     }
   };
 
-module.exports = function () {
+module.exports = (function () {
   var bundle = shim(browserify(), shimConfig);
 
   bundle.add('./app.js');
 
-  bundle.transform(brfs);
+  bundle.transform(partialify);
 
-  bundle.bundle().pipe(fs.createWriteStream('./dist/bundle.js'));
-}()
+  bundle.bundle({debug: true}).pipe(fs.createWriteStream('./dist/bundle.js'));
+})();

@@ -1,0 +1,14 @@
+{
+  "name": "demo-component",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "partialify": "~2.0.1"
+  },
+  "peerDependencies": {
+    "partialify": "~2.0.1"
+  },
+  "browserify": {
+    "transform": ["partialify"]
+  }
+}

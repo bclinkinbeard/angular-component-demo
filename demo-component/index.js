@@ -1,7 +1,6 @@
-var angular = require('angular'),
-  fs = require('fs');
+var angular = require('angular');
 
 module.exports = angular.module('demo-component', [])
-  .constant('template', require('fs').readFileSync(__dirname + '/template.html'))
+  .constant('template', require('./template.html'))
   .directive('demoComponent', require('./DemoDirective'))
   .controller('DemoController', require('./DemoController'));
