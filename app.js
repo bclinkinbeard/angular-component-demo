@@ -1,8 +1,7 @@
-var angular = require('angular'),
-  comp = require('demo-component');
+var angular = require('angular');
 
 angular.module('app', [
-    comp.name
+    require('demo-component').name
   ])
   .controller('ParentController', function ($scope) {
 

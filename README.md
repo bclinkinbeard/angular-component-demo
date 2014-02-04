@@ -1,15 +1,14 @@
 angular-component-demo
 ======================
 
-Simple demo of self contained AngularJS component approach that I've been alluding to on Twitter.
+Super simple demo of self contained AngularJS component architecture.
 
 The code is all pretty self explanatory, but the basic idea is that by bundling the template (and ultimately CSS as well) with the component, you get a fully self contained, portable unit. Directives are obviously a great vehicle for this approach, so all that is really necessary to add is template inlining and self compilation/DOM insertion.
 
 The full component is packaged as its own Angular module.
 
 ```
-var angular = require('angular'),
-  fs = require('fs');
+var angular = require('angular');
 
 module.exports = angular.module('demo-component', [])
   .constant('template', require('./template.html'))
@@ -53,8 +52,4 @@ The component can then be used by simply `require()`-ing it in and listing it as
 
 ## Try it yourself
 
-Clone the repo, `npm install`, then `node build.js`.
-
-## Umm, pkg.json?
-
-This file is included to show what your `package.json` would look like if this component were actually broken out into its own project/repository, which is the recommended approach/ultimate goal of this effort, that would then be installed into `node_modules` by other projects. Namely that you need to specify any transforms your component requires as dependencies, as well as listing them in the `browserify.transform` field. Since we are using this component as a local, rather than installed, dependency, we cannot name the file `package.json`.
+Clone the repo, `npm install` (demo-component is already in `node_modules`), then `browserify app.js > dist/bundle.js`.
