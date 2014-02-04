@@ -1,5 +1,5 @@
-var angular = require('angular');
-var comp = require('./demo-component');
+var angular = require('angular'),
+  comp = require('demo-component');
 
 angular.module('app', [
     comp.name

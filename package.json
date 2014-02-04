@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Simple demo of self contained AngularJS component",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/bclinkinbeard/angular-component-demo.git"
@@ -21,9 +18,20 @@
   "bugs": {
     "url": "https://github.com/bclinkinbeard/angular-component-demo/issues"
   },
-  "devDependencies": {
-    "browserify-shim": "~2.0.10",
+  "dependencies": {
+    "browserify-shim": "~3.2.2",
     "partialify": "~2.0.1",
-    "browserify": "~3.24.1"
+    "browserify": "~3.24.11"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "angular": "./angular.js"
+  },
+  "browserify-shim": {
+    "angular": "global:angular"
   }
 }
