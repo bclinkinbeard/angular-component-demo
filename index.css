@@ -1,0 +1,6 @@
+h3 {
+  font-family: Helvetica, sans-serif;
+  color: darkblue;
+}
+
+@import "demo-component";

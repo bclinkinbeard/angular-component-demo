@@ -11,6 +11,7 @@
     "browser",
     "angular",
     "browserify",
+    "atomify",
     "demo"
   ],
   "author": "Ben Clinkinbeard",
@@ -20,8 +21,7 @@
   },
   "dependencies": {
     "browserify-shim": "~3.2.2",
-    "partialify": "~2.0.1",
-    "browserify": "~3.24.11"
+    "atomify": "^1.4.2"
   },
   "browserify": {
     "transform": [
@@ -33,5 +33,18 @@
   },
   "browserify-shim": {
     "angular": "global:angular"
+  },
+  "atomify": {
+    "js": {
+      "entry": "app.js",
+      "output": "dist/bundle.js"
+    },
+    "css": {
+      "entry": "index.css",
+      "output": "dist/bundle.css"
+    }
+  },
+  "scripts": {
+    "build": "atomify"
   }
 }

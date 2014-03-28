@@ -1,8 +1,7 @@
 var angular = require('angular');
 
-angular.module('app', [
-    require('demo-component').name
-  ])
+angular.module('app', [])
+  .directive('demoComponent', require('demo-component'))
   .controller('ParentController', function ($scope) {
 
     $scope.people = [
