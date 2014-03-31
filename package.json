@@ -1,6 +1,6 @@
 {
   "name": "angular-component-demo",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Simple demo of self contained AngularJS component",
   "main": "app.js",
   "repository": {
